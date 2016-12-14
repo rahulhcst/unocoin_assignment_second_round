@@ -11,7 +11,7 @@ class Student extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'student';
 
     /**
      * The console command description.
