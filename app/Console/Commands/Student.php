@@ -37,6 +37,9 @@ class Student extends Command
      */
     public function handle()
     {
-        //
+        $studentDetails = [];
+        $count  = 0;
+
+        $this->ask();
     }
 }
