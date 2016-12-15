@@ -57,7 +57,7 @@ class Student extends Command
 
         echo "------------------------------------------------------------\r\n\r\n";
 
-        $count = $this->ask('Enter number of students', 0);
+        $count = $this->ask('Enter number of subjects', 0);
         if($count)
         {
             for ($i = 0; $i < $count; $i++)
