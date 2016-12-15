@@ -136,7 +136,8 @@ class Student extends Command
                 $sortOrder = 1;
         }
 
-        $studentObj = new StudentController($studentDetails, $subjects, $sortKey, 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
+        $studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
+        //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
         //$studentObj->generateResult();                                                 //Calling function execute
         $studentObj->execute();
 
