@@ -99,7 +99,15 @@ class Student extends Command
         switch ($sortBasedOn)
         {
             case 1:
-                $sortKey = 'student';
+                //$sortKey = 'student';
+
+                echo "Enter subject name on which to sort result\r\n";
+                foreach ($subjects as $k => $subject)
+                    echo "$k...$subject\r\n";
+
+                echo "Enter your choic\r\n";
+                $choice = $this->ask('Enter', 0);
+                $sortKey = key($subjects[$choice-1]);
                 break;
             case 2:
                 $sortKey = 'total';
