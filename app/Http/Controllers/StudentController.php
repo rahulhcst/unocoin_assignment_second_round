@@ -33,6 +33,7 @@ class StudentController extends Controller
         die;*/
         $sort = new Sort(new QuickSortAscending());
         //$sortedArray = $sort->sortAscending($this->studentDetails,);
+        var_dump($this->studentDetails);
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
         var_dump($sortedArray);
     }
