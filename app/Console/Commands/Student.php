@@ -54,7 +54,7 @@ class Student extends Command
                     break;
             }
         }
-        die;
+
         echo "------------------------------------------------------------\r\n\r\n";
 
         $count = $this->ask('Enter number of students', 0);
@@ -91,7 +91,11 @@ class Student extends Command
             array_push($studentDetails, $details);                              //Pushin details into array $studentDetails
         }
 
-        //$this->as
+        echo "Sort list on basis of SUBJECT or TOTAL MARKS\r\n";
+        echo "1...SUBJECT\r\n";
+        echo "2...TOTAL MARKS\r\n";
+        $sortBasedOn = $this->ask('Your selection', 2);
+
 
         $studentObj = new StudentController($studentDetails, $subjects);        //Instantiating class StudentController and passing array studentDetails, $subjects
         $studentObj->generateResult();                                                 //Calling function execute
