@@ -32,15 +32,16 @@ class Sort
 
     /**
      * @param $array
+     * @return mixed
      */
     public function sortAscending($array)
     {
-        $this->sortAlgorithm->sortAscending($array);
+        return $this->sortAlgorithm->sortAscending($array);
     }
 
-    public function sort($array)
+    public function sort($array, $sortKey)
     {
-
+        return $this->sortAlgorithm->sort($array, $sortKey);
     }
 
     public function  sortDescending()
