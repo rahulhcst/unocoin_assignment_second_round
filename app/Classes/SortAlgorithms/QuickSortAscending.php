@@ -6,7 +6,7 @@
  * Time: 10:15 AM
  */
 
-namespace App\Classes;
+namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 

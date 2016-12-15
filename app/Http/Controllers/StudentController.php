@@ -28,10 +28,9 @@ class StudentController extends Controller
      */
     public function execute()
     {
-        new QuickSortAscending();
+        /*new QuickSortAscending();
 
-        die;
-
+        die;*/
         $sort = new Sort(new QuickSortAscending());
         //$sortedArray = $sort->sortAscending($this->studentDetails,);
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
