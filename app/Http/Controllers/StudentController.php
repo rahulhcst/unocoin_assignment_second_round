@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\QuickSortAscending;
+use App\Classes\SortAlgorithms\QuickSortAscending;
 use App\Classes\Sort;
 use App\Classes\SortAlgorithms\QuickSort;
 use Illuminate\Http\Request;
