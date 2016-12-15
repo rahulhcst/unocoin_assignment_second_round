@@ -33,8 +33,13 @@ class Sort
     /**
      * @param $array
      */
-    public function sortData($array)
+    public function sortAscending($array)
     {
         $this->sortAlgorithms->sortAscending($array);
+    }
+
+    public function  sortDescending()
+    {
+
     }
 }
