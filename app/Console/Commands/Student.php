@@ -96,10 +96,33 @@ class Student extends Command
         echo "2...TOTAL MARKS\r\n";
         $sortBasedOn = $this->ask('Your selection', 2);
 
+        switch ($sortBasedOn)
+        {
+            case 1:
+                $sortKey = 'student';
+                break;
+            case 2:
+                $sortKey = 'total';
+                break;
+            default:
+                $sortKey = 'total';
+        }
+
         echo "Sort list in ASCENDING ORDER or DESCINDING ORDER\r\n";
         echo "1...ASCENDING ORDER\r\n";
         echo "2...DESCINDING ORDER\r\n";
         $sortOrder = $this->ask('Your Selection', 1);
+
+        switch ($sortOrder){
+            case 1:
+                $sortOrder = 1;
+                break;
+            case 2:
+                $sortOrder = -1;
+                break;
+            default:
+                $sortOrder = 1;
+        }
 
         $studentObj = new StudentController($studentDetails, $subjects);        //Instantiating class StudentController and passing array studentDetails, $subjects
         //$studentObj->generateResult();                                                 //Calling function execute

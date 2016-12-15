@@ -19,7 +19,7 @@ class Sort
     /**
      * @var SortContract
      */
-    private $sortAlgorithms;
+    private $sortAlgorithm;
 
     /**
      * Sort constructor.
@@ -27,7 +27,7 @@ class Sort
      */
     public function __construct(SortContract $sortContract)
     {
-        $this->sortAlgorithms = $sortContract;
+        $this->sortAlgorithm = $sortContract;
     }
 
     /**
@@ -35,7 +35,12 @@ class Sort
      */
     public function sortAscending($array)
     {
-        $this->sortAlgorithms->sortAscending($array);
+        $this->sortAlgorithm->sortAscending($array);
+    }
+
+    public function sort($array)
+    {
+
     }
 
     public function  sortDescending()

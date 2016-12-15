@@ -38,8 +38,8 @@ class MergeSort implements SortContract
      * @param $array
      * @return array
      */
-    public function sortDescenfing($array)
+    public function sortDescending($array)
     {
-        // TODO: Implement sortDescenfing() method.
+        // TODO: Implement sortDescending() method.
     }
 }

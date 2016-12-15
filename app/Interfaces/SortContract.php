@@ -18,7 +18,7 @@ interface SortContract
      * @param $array
      * @return mixed
      */
-    public function sort($array);
+    public function sort($array, $sortKey);
 
     /**
      * @param $array
@@ -30,7 +30,7 @@ interface SortContract
      * @param $array
      * @return mixed
      */
-    public function sortDescenfing($array);
+    public function sortDescending($array);
 }
 
 ?>
