@@ -28,7 +28,7 @@ class QuickSortAscending implements SortContract
             {
                 $tmp = $arr[$leftIndex];
                 $arr[$leftIndex] = $arr[$rightIndex];
-                $arr[$rightIndex] = $arr[$leftIndex];
+                $arr[$rightIndex] = $tmp;
                 $leftIndex++;
                 $rightIndex--;
             }
