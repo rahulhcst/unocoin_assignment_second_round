@@ -102,7 +102,7 @@ class Student extends Command
         $sortOrder = $this->ask('Your Selection', 1);
 
         $studentObj = new StudentController($studentDetails, $subjects);        //Instantiating class StudentController and passing array studentDetails, $subjects
-        $studentObj->generateResult();                                                 //Calling function execute
+        //$studentObj->generateResult();                                                 //Calling function execute
 
     }
 }
