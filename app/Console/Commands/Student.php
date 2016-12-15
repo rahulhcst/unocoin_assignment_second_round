@@ -105,9 +105,13 @@ class Student extends Command
                 foreach ($subjects as $k => $subject)
                     echo "$k...$subject\r\n";
 
-                echo "Enter your choic\r\n";
+                echo "Enter your choice\r\n";
                 $choice = $this->ask('Enter', 0);
-                $sortKey = key($subjects[$choice-1]);
+
+                var_dump($subjects);
+
+                //$sortKey = key($subjects[$choice-1]);
+                $sortKey = key($subjects[$choice]);
                 break;
             case 2:
                 $sortKey = 'total';
