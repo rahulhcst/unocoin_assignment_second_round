@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\SortAlgorithms\MergeSortAscending;
 use App\Classes\SortAlgorithms\QuickSortAscending;
 use App\Classes\Sort;
 use App\Classes\SortAlgorithms\QuickSort;
@@ -49,6 +50,18 @@ class StudentController extends Controller
                 }
                 break;
             case 2:
+                switch ($this->sortOrder)
+                {
+                    case -1:
+                        $sort = new Sort(new QuickSortDescending());
+                        break;
+                    case  1:
+                        $sort = new Sort(new MergeSortAscending());
+                        break;
+                    default:
+                        $sort = new Sort(new MergeSortAscending());
+                        break;
+                }
                 break;
             case 3:
                 break;
