@@ -13,7 +13,7 @@ class StudentController extends Controller
     private $studentDetails;
     private $subjects;
     private $sortKey;
-    private $sortOrder;
+    private $sortOrder = 1;
     private $algorithm;
 
     public function __construct($studentDetails = [], $subjects = [], $sortKey = 'total', $sortOrder = 1)
@@ -55,6 +55,17 @@ class StudentController extends Controller
             case 4:
                 break;
             default:
+                switch ($this->sortOrder)
+                {
+                    case -1:
+                        $sort = new Sort(new QuickSortDescending());
+                        break;
+                    case  1:
+                        $sort = new Sort(new QuickSortAscending());
+                        break;
+                    default:
+                        $sort = new Sort(new QuickSortAscending());
+                }
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
 
