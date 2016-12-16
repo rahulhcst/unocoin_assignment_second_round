@@ -86,6 +86,7 @@ class Student extends Command
                 if (!$marks)
                     $marks = 0;                                                 //If marks is not enterd assuming 0
                 array_push($details['marks'], $marks);                          //Pushing marks into $details['marks'] array
+                $details[$subject] = $marks;
                 $details['total'] += $marks;                                    //Taking sum of the marks
             }
             array_push($studentDetails, $details);                              //Pushin details into array $studentDetails
