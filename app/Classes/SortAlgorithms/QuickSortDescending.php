@@ -101,6 +101,7 @@ class QuickSortDescending implements SortContract
     public function sort($array, $sortKey)
     {
         //$sortKey = 'Maths';
+        var_dump($sortKey);
         $this->quickSort($array, 0, count($array)-1, $sortKey);
         return $array;
     }
