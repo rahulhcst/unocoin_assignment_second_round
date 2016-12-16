@@ -85,7 +85,7 @@ class Student extends Command
                 $marks = $this->ask('Enter marks of '.$subject, false);         //Input for taking marks from user of each subject
                 if (!$marks)
                     $marks = 0;                                                 //If marks is not enterd assuming 0
-                array_push($details['marks'], $marks);                          //Pushing marks into $details['marks'] array
+                //array_push($details['marks'], $marks);                          //Pushing marks into $details['marks'] array
                 $details[$subject] = $marks;
                 $details['total'] += $marks;                                    //Taking sum of the marks
             }

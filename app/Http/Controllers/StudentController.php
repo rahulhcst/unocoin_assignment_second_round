@@ -13,6 +13,7 @@ class StudentController extends Controller
     private $subjects;
     private $sortKey;
     private $sortOrder;
+    private $algorithm;
 
     public function __construct($studentDetails = [], $subjects = [], $sortKey = 'total', $sortOrder = 1)
     {
@@ -28,15 +29,24 @@ class StudentController extends Controller
      */
     public function execute()
     {
-        /*new QuickSortAscending();
-
-        die;*/
-        $sort = new Sort(new QuickSortAscending());
-        //$sortedArray = $sort->sortAscending($this->studentDetails,);
         echo "\r\nInput\r\n";
         var_dump($this->studentDetails);
         echo "\r\n";
+        switch ($this->algorithm)
+        {
+            case 1:
+                $sort = new Sort(new QuickSortAscending());
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+        }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
+
         echo "\r\nRESULT\r\n";
         var_dump($sortedArray);
         echo "\r\n";
