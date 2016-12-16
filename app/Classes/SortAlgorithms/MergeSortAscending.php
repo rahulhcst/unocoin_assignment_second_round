@@ -26,10 +26,10 @@ class MergeSortAscending implements SortContract
         while ($i < $n1 && $j < $n2)
         {
             if ($leftArr[$i][$sortKey] <= $rightArr[$i][$sortKey]) {
-                $arr[$k] = $leftArr[$i];
+                $arr[$k][$sortKey] = $leftArr[$i][$sortKey];
                 $i++;
             } else {
-                $arr[$k] = $rightArr[$j];
+                $arr[$k][$sortKey] = $rightArr[$j][$sortKey];
                 $j++;
             }
             $k++;
@@ -37,7 +37,7 @@ class MergeSortAscending implements SortContract
 
         while ($i < $n1)
         {
-            $arr[$k] = $leftArr[$i];
+            $arr[$k][$sortKey] = $leftArr[$i][$sortKey];
             $i++;
             $k++;
 
@@ -45,7 +45,7 @@ class MergeSortAscending implements SortContract
 
         while ($j < $n2)
         {
-            $arr[$k] = $rightArr[$j];
+            $arr[$k][$sortKey] = $rightArr[$j][$sortKey];
             $j++;
             $k++;
         }
@@ -67,7 +67,7 @@ class MergeSortAscending implements SortContract
 
     public function sort($array, $sortKey)
     {
-        $this->mergeSort($array, 0 , 1, (count($sortKey) - 1));
+        $this->mergeSort($array, 0 , (count($sortKey) - 1), $sortKey);
         return $array;
     }
 }
