@@ -21,12 +21,13 @@ class StudentController extends Controller
     private $sortOrder = 1;
     private $algorithm;
 
-    public function __construct($studentDetails = [], $subjects = [], $sortKey = 'total', $sortOrder = 1)
+    public function __construct($studentDetails = [], $subjects = [], $sortKey = 'total', $sortOrder = 1, $algorithm = 1)
     {
         $this->studentDetails = $studentDetails;
         $this->subjects = $subjects;
         $this->sortKey = $sortKey;
         $this->sortOrder = $sortOrder;
+        $this->algorithm = $algorithm;
     }
 
 

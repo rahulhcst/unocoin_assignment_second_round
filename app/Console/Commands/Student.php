@@ -144,7 +144,7 @@ class Student extends Command
         echo "4...HEAPSORT\r\n";
         $algorithm = $this->ask('Your Selection', 1);
 
-        $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder);        //Instantiating class StudentController and passing array studentDetails, $subjects
+        $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder, $algorithm);        //Instantiating class StudentController and passing array studentDetails, $subjects
         //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
         //$studentObj->generateResult();                                                 //Calling function execute
         $studentObj->execute();
