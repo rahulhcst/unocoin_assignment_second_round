@@ -112,7 +112,7 @@ class Student extends Command
                 var_dump($subjects);
 
                 $sortKey = $subjects[$choice-1];
-                var_dump($sortKey);
+                //var_dump($sortKey);
                 break;
             case 2:
                 $sortKey = 'total';
