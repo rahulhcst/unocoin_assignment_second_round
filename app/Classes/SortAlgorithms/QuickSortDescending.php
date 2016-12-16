@@ -42,7 +42,6 @@ class QuickSortDescending implements SortContract
 
     public function sort($array, $sortKey)
     {
-        die('ggh');
         $this->quickSort($array, 0, (count($array) - 1), $sortKey);
         return $array;
     }
