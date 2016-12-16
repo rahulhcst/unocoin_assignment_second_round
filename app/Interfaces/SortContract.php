@@ -24,13 +24,13 @@ interface SortContract
      * @param $array
      * @return mixed
      */
-    public function sortAscending($array);
+    /*public function sortAscending($array);*/
 
     /**
      * @param $array
      * @return mixed
      */
-    public function sortDescending($array);
+    /*public function sortDescending($array);*/
 }
 
 ?>

@@ -56,7 +56,7 @@ class QuickSortAscending implements SortContract
         return $array;
     }
 
-    public function sortAscending($array)
+    /*public function sortAscending($array)
     {
         // TODO: Implement sortAscending() method.
     }
@@ -64,5 +64,5 @@ class QuickSortAscending implements SortContract
     public function sortDescending($array)
     {
         // TODO: Implement sortDescending() method.
-    }
+    }*/
 }

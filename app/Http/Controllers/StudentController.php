@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes\SortAlgorithms\QuickSortAscending;
 use App\Classes\Sort;
 use App\Classes\SortAlgorithms\QuickSort;
+use App\Classes\SortAlgorithms\QuickSortDescending;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -35,7 +36,17 @@ class StudentController extends Controller
         switch ($this->algorithm)
         {
             case 1:
-                $sort = new Sort(new QuickSortAscending());
+                switch ($this->sortOrder)
+                {
+                    case -1:
+                        $sort = new Sort(new QuickSortDescending());
+                        break;
+                    case  1:
+                        $sort = new Sort(new QuickSortAscending());
+                        break;
+                    default:
+                        $sort = new Sort(new QuickSortAscending());
+                }
                 break;
             case 2:
                 break;
