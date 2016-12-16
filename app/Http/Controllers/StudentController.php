@@ -67,6 +67,7 @@ class StudentController extends Controller
                         $sort = new Sort(new QuickSortAscending());
                 }
         }
+        die('vbnm');
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
 
         echo "\r\nRESULT\r\n";
