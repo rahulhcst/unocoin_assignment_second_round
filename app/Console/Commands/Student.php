@@ -142,7 +142,7 @@ class Student extends Command
         echo "2...MERGESORT\r\n";
         echo "3...SELECTION SORT\r\n";
         echo "4...HEAPSORT\r\n";
-        $this->ask('Your Selection', 1);
+        $algorithm = $this->ask('Your Selection', 1);
 
         $studentObj = new StudentController($studentDetails, $subjects, $sortKey, 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
         //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
