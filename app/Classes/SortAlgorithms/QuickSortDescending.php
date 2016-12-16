@@ -34,7 +34,6 @@ class QuickSortDescending implements SortContract
     private function quickSort(&$array, $leftIndex, $rightIndex, $sortKey)
     {
         $index = $this->partition($array, $leftIndex, $rightIndex, $sortKey);             //Calling partition function
-        die("\r\nhdhshdhsh\r\n");
         if ($leftIndex < $index - 1)
             $this->quickSort($array, $leftIndex, $index - 1, $sortKey);                 //Recursive call to quicksort with new right index
         if ($index < $rightIndex)
@@ -43,7 +42,10 @@ class QuickSortDescending implements SortContract
 
     public function sort($array, $sortKey)
     {
+        /*var_dump($sortKey);
+        die;*/
         $this->quickSort($array, 0, (count($array) - 1), $sortKey);
+        die("\r\nhdhshdhsh\r\n");
         return $array;
     }
 
