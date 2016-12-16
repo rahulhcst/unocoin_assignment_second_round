@@ -50,7 +50,7 @@ class QuickSortDescending implements SortContract
     }*/
 
 
-    private function partition (&$arr, $leftIndex, $rightIndex)
+    private function partition (&$arr, $leftIndex, $rightIndex, $sortKey)
     {
         //$pivot = $arr[($leftIndex+$rightIndex)/2]['total'];         //Selecting pivot
         $pivot = $arr[($leftIndex+$rightIndex)/2]['Maths'];         //Selecting pivot
@@ -89,18 +89,19 @@ class QuickSortDescending implements SortContract
      * @param int $leftIndex
      * @param int $rightIndex
      */
-    private function quickSort(&$arr, $leftIndex, $rightIndex)
+    private function quickSort(&$arr, $leftIndex, $rightIndex, $sortKey)
     {
-        $index = $this->partition($arr,$leftIndex,$rightIndex);             //Calling partition function
+        $index = $this->partition($arr,$leftIndex,$rightIndex, $sortKey);             //Calling partition function
         if ($leftIndex < $index - 1)
-            $this->quickSort($arr, $leftIndex, $index - 1);                 //Recursive call to quicksort with new right index
+            $this->quickSort($arr, $leftIndex, $index - 1, $sortKey);                 //Recursive call to quicksort with new right index
         if ($index < $rightIndex)
-            $this->quickSort($arr, $index, $rightIndex);                    //Recursive call to quicksort with new left index
+            $this->quickSort($arr, $index, $rightIndex, $sortKey);                    //Recursive call to quicksort with new left index
     }
 
     public function sort($array, $sortKey)
     {
-        $this->quickSort($array, 0, count($array)-1);
+        $sortKey = 'Maths';
+        $this->quickSort($array, 0, count($array)-1, $sortKey);
         return $array;
     }
 }
