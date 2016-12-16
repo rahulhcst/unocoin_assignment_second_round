@@ -8,6 +8,7 @@ use App\Classes\SortAlgorithms\QuickSortAscending;
 use App\Classes\Sort;
 use App\Classes\SortAlgorithms\QuickSort;
 use App\Classes\SortAlgorithms\QuickSortDescending;
+use App\Classes\SortAlgorithms\SelectionSortAscending;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -65,6 +66,17 @@ class StudentController extends Controller
                 }
                 break;
             case 3:
+                switch ($this->sortOrder)
+                {
+                    case -1:
+                        $sort = new Sort(new SelectionSortAscending());
+                        break;
+                    case 1:
+                        $sort = new Sort(new SelectionSortAscending());
+                        break;
+                    default:
+                        $sort = new Sort(new SelectionSortAscending());
+                }
                 break;
             case 4:
                 break;
