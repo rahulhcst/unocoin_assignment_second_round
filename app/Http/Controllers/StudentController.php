@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\SortAlgorithms\HeapSortAscending;
 use App\Classes\SortAlgorithms\MergeSortAscending;
 use App\Classes\SortAlgorithms\MergeSortDescending;
 use App\Classes\SortAlgorithms\QuickSortAscending;
@@ -9,6 +10,7 @@ use App\Classes\Sort;
 use App\Classes\SortAlgorithms\QuickSort;
 use App\Classes\SortAlgorithms\QuickSortDescending;
 use App\Classes\SortAlgorithms\SelectionSortAscending;
+use App\Classes\SortAlgorithms\SelectionSortDescending;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -69,7 +71,7 @@ class StudentController extends Controller
                 switch ($this->sortOrder)
                 {
                     case -1:
-                        $sort = new Sort(new SelectionSortAscending());
+                        $sort = new Sort(new SelectionSortDescending());
                         break;
                     case 1:
                         $sort = new Sort(new SelectionSortAscending());
@@ -84,13 +86,13 @@ class StudentController extends Controller
                 switch ($this->sortOrder)
                 {
                     case -1:
-                        $sort = new Sort(new QuickSortDescending());
+                        $sort = new Sort(new HeapSortAscending());
                         break;
                     case  1:
-                        $sort = new Sort(new QuickSortAscending());
+                        $sort = new Sort(new HeapSortAscending());
                         break;
                     default:
-                        $sort = new Sort(new QuickSortAscending());
+                        $sort = new Sort(new HeapSortAscending());
                 }
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
