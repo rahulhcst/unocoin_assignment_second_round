@@ -53,7 +53,8 @@ class QuickSortDescending implements SortContract
     private function partition (&$arr, $leftIndex, $rightIndex, $sortKey)
     {
         //$pivot = $arr[($leftIndex+$rightIndex)/2]['total'];         //Selecting pivot
-        $pivot = $arr[($leftIndex+$rightIndex)/2]['Maths'];         //Selecting pivot
+        //$pivot = $arr[($leftIndex+$rightIndex)/2]['Maths'];         //Selecting pivot
+        $pivot = $arr[($leftIndex+$rightIndex)/2][$sortKey];         //Selecting pivot
 
         while ($leftIndex <= $rightIndex)
         {
@@ -69,9 +70,9 @@ class QuickSortDescending implements SortContract
                 $rightIndex--;
             }*/
 
-            while ($arr[$leftIndex]['Maths'] > $pivot)              //Increasing left index until it is smaller than pivot
+            while ($arr[$leftIndex][$sortKey] > $pivot)//while ($arr[$leftIndex]['Maths'] > $pivot)              //Increasing left index until it is smaller than pivot
                 $leftIndex++;
-            while ($arr[$rightIndex]['Maths'] < $pivot)             //Decreasing right index intil it is greater than pivot
+            while ($arr[$rightIndex][$sortKey] < $pivot)//while ($arr[$rightIndex]['Maths'] < $pivot)             //Decreasing right index intil it is greater than pivot
                 $rightIndex--;
             if ($leftIndex <= $rightIndex) {                        //Swap the values if left index is smaller then or equal to right index
                 $tmp = $arr[$leftIndex];
