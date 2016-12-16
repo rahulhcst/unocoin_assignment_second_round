@@ -38,6 +38,7 @@ class StudentController extends Controller
         echo "\r\nInput\r\n";
         var_dump($this->studentDetails);
         echo "\r\n";
+        var_dump($this->algorithm);
         switch ($this->algorithm)
         {
             case 1:
