@@ -12,7 +12,7 @@ use App\Interfaces\SortContract;
 
 class QuickSortDescending implements SortContract
 {
-    private function partition(&$arr, $leftIndex, $rightIndex, $sortKey)
+    /*private function partition(&$arr, $leftIndex, $rightIndex, $sortKey)
     {
         $pivot = $arr[($leftIndex+$rightIndex)/2][$sortKey];         //Selecting pivot
         while ($leftIndex <= $rightIndex)
@@ -43,19 +43,51 @@ class QuickSortDescending implements SortContract
     public function sort($array, $sortKey)
     {
         /*var_dump($sortKey);
-        die;*/
+        die;*\/
         $this->quickSort($array, 0, (count($array) - 1), $sortKey);
         die("\r\nhdhshdhsh\r\n");
         return $array;
-    }
-
-    /*public function sortAscending($array)
-    {
-        // TODO: Implement sortAscending() method.
-    }
-
-    public function sortDescending($array)
-    {
-        // TODO: Implement sortDescending() method.
     }*/
+
+
+    private function partition (&$arr, $leftIndex, $rightIndex)
+    {
+        $pivot = $arr[($leftIndex+$rightIndex)/2]['total'];         //Selecting pivot
+
+        while ($leftIndex <= $rightIndex)
+        {
+            while ($arr[$leftIndex]['total'] > $pivot)              //Increasing left index until it is smaller than pivot
+                $leftIndex++;
+            while ($arr[$rightIndex]['total'] < $pivot)             //Decreasing right index intil it is greater than pivot
+                $rightIndex--;
+            if ($leftIndex <= $rightIndex) {                        //Swap the values if left index is smaller then or equal to right index
+                $tmp = $arr[$leftIndex];
+                $arr[$leftIndex] = $arr[$rightIndex];
+                $arr[$rightIndex] = $tmp;
+                $leftIndex++;
+                $rightIndex--;
+            }
+        }
+        return $leftIndex;
+    }
+
+    /**
+     * @param array $arr
+     * @param int $leftIndex
+     * @param int $rightIndex
+     */
+    private function quickSort(&$arr, $leftIndex, $rightIndex)
+    {
+        $index = $this->partition($arr,$leftIndex,$rightIndex);             //Calling partition function
+        if ($leftIndex < $index - 1)
+            $this->quickSort($arr, $leftIndex, $index - 1);                 //Recursive call to quicksort with new right index
+        if ($index < $rightIndex)
+            $this->quickSort($arr, $index, $rightIndex);                    //Recursive call to quicksort with new left index
+    }
+
+    public function sort($array, $sortKey)
+    {
+        $this->quickSort($array, 0, count($array)-1);
+        return $array;
+    }
 }
