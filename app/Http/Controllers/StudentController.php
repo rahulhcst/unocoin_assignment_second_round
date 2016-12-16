@@ -70,7 +70,6 @@ class StudentController extends Controller
                 }
                 break;
             case 3:
-                die('ndjfjdfj');
                 switch ($this->sortOrder)
                 {
                     case -1:
