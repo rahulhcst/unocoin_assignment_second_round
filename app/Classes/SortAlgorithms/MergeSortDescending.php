@@ -52,6 +52,35 @@ class MergeSortDescending implements SortContract
     }*/
 
 
+    /*private function merge(&$arr, $l, $m, $r, $sortKey)
+    {
+        $n1 = $m - $l + 1;
+        $n2 = $r - $m;
+
+        $leftArr = array_slice($arr, $l, $n1);
+        $rightArr = array_slice($arr, $m + 1, $n2);
+
+        $i = 0;
+        $j = 0;
+        $k = $l;
+
+        while ($i < $n1 && $j < $n2)
+        {
+            if($leftArr[$i][$sortKey] > $rightArr[$j][$sortKey])
+                $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+            else
+                $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+        }
+
+        while ($i < $n1)
+            $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+
+        while ($j < $n2)
+            $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+
+    }*/
+
+
     private function merge(&$arr, $l, $m, $r, $sortKey)
     {
         $n1 = $m - $l + 1;
