@@ -91,63 +91,67 @@ class Student extends Command
             }
             array_push($studentDetails, $details);                              //Pushin details into array $studentDetails
         }
+        $ch = 'Y';
+        while (strtoupper($ch)  == 'Y') {
 
-        echo "Sort list on basis of SUBJECT or TOTAL MARKS\r\n";
-        echo "1...SUBJECT\r\n";
-        echo "2...TOTAL MARKS\r\n";
-        $sortBasedOn = $this->ask('Your selection', 2);
 
-        switch ($sortBasedOn)
-        {
-            case 1:
-                //$sortKey = 'student';
+            echo "Sort list on basis of SUBJECT or TOTAL MARKS\r\n";
+            echo "1...SUBJECT\r\n";
+            echo "2...TOTAL MARKS\r\n";
+            $sortBasedOn = $this->ask('Your selection', 2);
 
-                echo "Enter subject name on which to sort result\r\n";
-                foreach ($subjects as $k => $subject)
-                    echo ($k+1)."...$subject\r\n";
+            switch ($sortBasedOn) {
+                case 1:
+                    //$sortKey = 'student';
 
-                echo "Enter your choice\r\n";
-                $choice = $this->ask('Enter', 0);
+                    echo "Enter subject name on which to sort result\r\n";
+                    foreach ($subjects as $k => $subject)
+                        echo ($k + 1) . "...$subject\r\n";
 
-                //var_dump($subjects);
+                    echo "Enter your choice\r\n";
+                    $choice = $this->ask('Enter', 0);
 
-                $sortKey = $subjects[$choice-1];
-                //var_dump($sortKey);
-                break;
-            case 2:
-                $sortKey = 'total';
-                break;
-            default:
-                $sortKey = 'total';
+                    //var_dump($subjects);
+
+                    $sortKey = $subjects[$choice - 1];
+                    //var_dump($sortKey);
+                    break;
+                case 2:
+                    $sortKey = 'total';
+                    break;
+                default:
+                    $sortKey = 'total';
+            }
+
+            echo "Sort list in ASCENDING ORDER or DESCINDING ORDER\r\n";
+            echo "1...ASCENDING ORDER\r\n";
+            echo "2...DESCINDING ORDER\r\n";
+            $sortOrder = $this->ask('Your Selection', 1);
+
+            switch ($sortOrder) {
+                case 1:
+                    $sortOrder = 1;
+                    break;
+                case 2:
+                    $sortOrder = -1;
+                    break;
+                default:
+                    $sortOrder = 1;
+            }
+
+            echo "Select SORTING ALGORITHM from below algorithms\r\n";
+            echo "1...QUICKSORT\r\n";
+            echo "2...MERGESORT\r\n";
+            echo "3...SELECTION SORT\r\n";
+            echo "4...HEAPSORT\r\n";
+            $algorithm = $this->ask('Your Selection', 1);
+
+            $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder, $algorithm);        //Instantiating class StudentController and passing array studentDetails, $subjects
+            //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
+            //$studentObj->generateResult();                                                 //Calling function execute
+            $studentObj->execute();
+
+            $ch = $this->ask('Y or N', 'N');
         }
-
-        echo "Sort list in ASCENDING ORDER or DESCINDING ORDER\r\n";
-        echo "1...ASCENDING ORDER\r\n";
-        echo "2...DESCINDING ORDER\r\n";
-        $sortOrder = $this->ask('Your Selection', 1);
-
-        switch ($sortOrder){
-            case 1:
-                $sortOrder = 1;
-                break;
-            case 2:
-                $sortOrder = -1;
-                break;
-            default:
-                $sortOrder = 1;
-        }
-
-        echo "Select SORTING ALGORITHM from below algorithms\r\n";
-        echo "1...QUICKSORT\r\n";
-        echo "2...MERGESORT\r\n";
-        echo "3...SELECTION SORT\r\n";
-        echo "4...HEAPSORT\r\n";
-        $algorithm = $this->ask('Your Selection', 1);
-
-        $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder, $algorithm);        //Instantiating class StudentController and passing array studentDetails, $subjects
-        //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
-        //$studentObj->generateResult();                                                 //Calling function execute
-        $studentObj->execute();
-
     }
 }
