@@ -31,10 +31,10 @@ class MergeSortAscending implements SortContract
         while ($i < $n1 && $j < $n2)
         {
             if ($leftArr[$i][$sortKey] <= $rightArr[$i][$sortKey]) {
-                $arr[$k][$sortKey] = $leftArr[$i][$sortKey];
+                $arr[$k] = $leftArr[$i];//$arr[$k][$sortKey] = $leftArr[$i][$sortKey];
                 $i++;
             } else {
-                $arr[$k][$sortKey] = $rightArr[$j][$sortKey];
+                $arr[$k] = $rightArr[$j];//$arr[$k][$sortKey] = $rightArr[$j][$sortKey];
                 $j++;
             }
             $k++;
@@ -42,7 +42,8 @@ class MergeSortAscending implements SortContract
 
         while ($i < $n1)
         {
-            $arr[$k][$sortKey] = $leftArr[$i][$sortKey];
+            //$arr[$k][$sortKey] = $leftArr[$i][$sortKey];
+            $arr[$k] = $leftArr[$i];
             $i++;
             $k++;
 
@@ -50,7 +51,8 @@ class MergeSortAscending implements SortContract
 
         while ($j < $n2)
         {
-            $arr[$k][$sortKey] = $rightArr[$j][$sortKey];
+            //$arr[$k][$sortKey] = $rightArr[$j][$sortKey];
+            $arr[$k] = $rightArr[$j];
             $j++;
             $k++;
         }
@@ -64,10 +66,12 @@ class MergeSortAscending implements SortContract
 
     private function mergeSort(&$arr, $l, $r, $sortKey)
     {
+        echo 'l ';var_dump($l);
+        echo 'r ';var_dump($r);
         if ($l < $r)
         {
-            //$m = ($l + ($r - $l))/2;
-            $m = ($l + $r)/2;
+            $m = (int)(($l + ($r - $l))/2);
+            //$m = (int)(($l + $r)/2);
 
             $this->mergeSort($arr, $l, $m, $sortKey);
             $this->mergeSort($arr, $m+1, $r, $sortKey);
