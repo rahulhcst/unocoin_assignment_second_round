@@ -56,11 +56,18 @@ class MergeSortAscending implements SortContract
         }
     }
 
+    /*private function merge(&$arr, $l, $m, $r)
+    {
+
+
+    }*/
+
     private function mergeSort(&$arr, $l, $r, $sortKey)
     {
         if ($l < $r)
         {
-            $m = ($l + ($r - $l))/2;
+            //$m = ($l + ($r - $l))/2;
+            $m = ($l + $r)/2;
 
             $this->mergeSort($arr, $l, $m, $sortKey);
             $this->mergeSort($arr, $m+1, $r, $sortKey);
