@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\SortAlgorithms\HeapSortAscending;
+use App\Classes\SortAlgorithms\HeapSortDescending;
 use App\Classes\SortAlgorithms\MergeSortAscending;
 use App\Classes\SortAlgorithms\MergeSortDescending;
 use App\Classes\SortAlgorithms\QuickSortAscending;
@@ -86,7 +87,7 @@ class StudentController extends Controller
                 switch ($this->sortOrder)
                 {
                     case -1:
-                        $sort = new Sort(new HeapSortAscending());
+                        $sort = new Sort(new HeapSortDescending());
                         break;
                     case  1:
                         $sort = new Sort(new HeapSortAscending());
@@ -94,6 +95,7 @@ class StudentController extends Controller
                     default:
                         $sort = new Sort(new HeapSortAscending());
                 }
+
                 break;
             default:
                 switch ($this->sortOrder)
