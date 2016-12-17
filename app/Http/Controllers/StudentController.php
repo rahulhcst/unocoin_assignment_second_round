@@ -50,7 +50,7 @@ class StudentController extends Controller
             /*foreach ($studentDetail['marks'] as $v)
                 printf('%-10s|', $v);*/
             foreach ($subjects as $subject)
-                printf('%-10s|', $subject);
+                printf('%-10s|', $studentDetail[$subject]);
             printf('%-10s', $studentDetail['total']);
             echo "\r\n";
         }
@@ -139,6 +139,6 @@ class StudentController extends Controller
         echo "\r\nRESULT\r\n";
         var_dump($sortedArray);
         echo "\r\n";
-        $this->printOutput($sort, $this->subjects);
+        $this->printOutput($sortedArray, $this->subjects);
     }
 }
