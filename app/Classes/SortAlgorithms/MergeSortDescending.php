@@ -67,16 +67,16 @@ class MergeSortDescending implements SortContract
         while ($i < $n1 && $j < $n2)
         {
             if($leftArr[$i][$sortKey] > $rightArr[$j][$sortKey])
-                $arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+                $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
             else
-                $arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+                $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
         }
 
         while ($i < $n1)
-            $arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+            $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
 
         while ($j < $n2)
-            $arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+            $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
 
     }
 
