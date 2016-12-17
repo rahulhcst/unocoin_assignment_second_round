@@ -61,10 +61,10 @@ class StudentController extends Controller
      */
     public function execute()
     {
-        echo "\r\nInput\r\n";
+        /*echo "\r\nInput\r\n";
         var_dump($this->studentDetails);
         echo "\r\n";
-        var_dump($this->algorithm);
+        var_dump($this->algorithm);*/
         switch ($this->algorithm)
         {
             case 1:
@@ -136,9 +136,9 @@ class StudentController extends Controller
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
 
-        echo "\r\nRESULT\r\n";
+        /*echo "\r\nRESULT\r\n";
         var_dump($sortedArray);
-        echo "\r\n";
+        echo "\r\n";*/
         $this->printOutput($sortedArray, $this->subjects);
     }
 }

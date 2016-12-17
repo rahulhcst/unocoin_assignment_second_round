@@ -109,7 +109,7 @@ class Student extends Command
                 echo "Enter your choice\r\n";
                 $choice = $this->ask('Enter', 0);
 
-                var_dump($subjects);
+                //var_dump($subjects);
 
                 $sortKey = $subjects[$choice-1];
                 //var_dump($sortKey);
