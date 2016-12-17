@@ -14,15 +14,15 @@ class MergeSortAscending implements SortContract
 {
     private function merge(&$arr, $l, $m, $r, $sortKey)
     {
-        var_dump($l);
+        /*var_dump($l);
         var_dump($m);
-        var_dump($r);
+        var_dump($r);*/
         $n1 = ($m - $l +1);
         $n2 = ($r - $m);
         $leftArr = array_slice($arr, 0, $n1);
-        var_dump($leftArr);
+        //var_dump($leftArr);
         $rightArr= array_slice($arr, ($m + 1), $n2);
-        var_dump($rightArr);
+        //var_dump($rightArr);
 
         $i = 0;
         $j = 0;
@@ -66,8 +66,8 @@ class MergeSortAscending implements SortContract
 
     private function mergeSort(&$arr, $l, $r, $sortKey)
     {
-        echo 'l ';var_dump($l);
-        echo 'r ';var_dump($r);
+        /*echo 'l ';var_dump($l);
+        echo 'r ';var_dump($r);*/
         if ($l < $r)
         {
             $m = (int)(($l + ($r - $l))/2);
