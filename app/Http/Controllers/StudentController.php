@@ -83,6 +83,17 @@ class StudentController extends Controller
                 }
                 break;
             case 4:
+                switch ($this->sortOrder)
+                {
+                    case -1:
+                        $sort = new Sort(new HeapSortAscending());
+                        break;
+                    case  1:
+                        $sort = new Sort(new HeapSortAscending());
+                        break;
+                    default:
+                        $sort = new Sort(new HeapSortAscending());
+                }
                 break;
             default:
                 switch ($this->sortOrder)
