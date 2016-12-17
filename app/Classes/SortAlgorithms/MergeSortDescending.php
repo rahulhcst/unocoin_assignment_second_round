@@ -12,7 +12,7 @@ use App\Interfaces\SortContract;
 
 class MergeSortDescending implements SortContract
 {
-    private function merge(&$arr, $l, $m, $r, $sortKey)
+    /*private function merge(&$arr, $l, $m, $r, $sortKey)
     {
         $n1 = ($m - $l +1);
         $n2 = ($r - $m);
@@ -49,6 +49,35 @@ class MergeSortDescending implements SortContract
             $j++;
             $k++;
         }
+    }*/
+
+
+    private function merge(&$arr, $l, $m, $r, $sortKey)
+    {
+        $n1 = $m - $l + 1;
+        $n2 = $r - $m;
+
+        $leftArr = array_slice($arr, $l, $n1);
+        $rightArr = array_slice($arr, $m + 1, $n2);
+
+        $i = 0;
+        $j = 0;
+        $k = $l;
+
+        while ($i < $n1 && $j < $n2)
+        {
+            if($leftArr[$i][$sortKey] > $rightArr[$j][$sortKey])
+                $arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+            else
+                $arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+        }
+
+        while ($i < $n1)
+            $arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+
+        while ($j < $n2)
+            $arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+
     }
 
     private function mergeSort(&$arr, $l, $r, $sortKey)
@@ -67,7 +96,7 @@ class MergeSortDescending implements SortContract
 
     public function sort($array, $sortKey)
     {
-        $this->mergeSort($array, 0, (count($sortKey) - 1), $sortKey);
+        $this->mergeSort($array, 0, (count($array) - 1), $sortKey);
         return $array;
     }
 }
