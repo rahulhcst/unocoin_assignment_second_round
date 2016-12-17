@@ -16,8 +16,8 @@ class MergeSortAscending implements SortContract
     {
         $n1 = ($m - $l +1);
         $n2 = ($r - $m);
-        $leftArr = array_splice($arr, 0, $n1);
-        $rightArr= array_splice($arr, ($m + 1), $n2);
+        $leftArr = array_slice($arr, 0, $n1);
+        $rightArr= array_slice($arr, ($m + 1), $n2);
 
         $i = 0;
         $j = 0;
