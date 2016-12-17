@@ -10,8 +10,19 @@ namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 
+/**
+ * Class MergeSortDescending
+ * @package App\Classes\SortAlgorithms
+ */
 class MergeSortDescending implements SortContract
 {
+    /**
+     * @param $arr
+     * @param $l
+     * @param $m
+     * @param $r
+     * @param $sortKey
+     */
     function merge(&$arr, $l, $m, $r, $sortKey)
     {
         $n1 = $m - $l + 1;
@@ -40,6 +51,12 @@ class MergeSortDescending implements SortContract
 
     }
 
+    /**
+     * @param $arr
+     * @param $l
+     * @param $r
+     * @param $sortKey
+     */
     function mergeSort(&$arr, $l, $r, $sortKey)
     {
         if ($l < $r)
@@ -51,6 +68,11 @@ class MergeSortDescending implements SortContract
         }
     }
 
+    /**
+     * @param $array
+     * @param $sortKey
+     * @return mixed
+     */
     public function sort($array, $sortKey)
     {
         $this->mergeSort($array, 0, (count($array)-1),$sortKey);

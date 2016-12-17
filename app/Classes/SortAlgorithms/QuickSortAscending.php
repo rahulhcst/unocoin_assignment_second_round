@@ -10,10 +10,19 @@ namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 
+/**
+ * Class QuickSortAscending
+ * @package App\Classes\SortAlgorithms
+ */
 class QuickSortAscending implements SortContract
 {
-    private $sortKey;
-
+    /**
+     * @param $arr
+     * @param $leftIndex
+     * @param $rightIndex
+     * @param $sortKey
+     * @return mixed
+     */
     private function partition(&$arr, $leftIndex, $rightIndex, $sortKey)
     {
         $pivot = $arr[($leftIndex+$rightIndex)/2][$sortKey];
@@ -33,10 +42,15 @@ class QuickSortAscending implements SortContract
                 $rightIndex--;
             }
         }
-
         return $leftIndex;
     }
 
+    /**
+     * @param $array
+     * @param $leftIndex
+     * @param $rightIndex
+     * @param $sortKey
+     */
     private function quickSort(&$array, $leftIndex, $rightIndex, $sortKey)
     {
         $index = $this->partition($array, $leftIndex, $rightIndex, $sortKey);
@@ -45,24 +59,16 @@ class QuickSortAscending implements SortContract
             $this->partition($array, $leftIndex, $index-1, $sortKey);
         if ($rightIndex > 0)
             $this->partition($array, 0, $rightIndex, $sortKey);
-
     }
 
+    /**
+     * @param $array
+     * @param $sortKey
+     * @return mixed
+     */
     public function sort($array, $sortKey)
     {
-        $this->sortKey = $sortKey;
         $this->quickSort($array, 0, (count($array) - 1), $sortKey);
-
         return $array;
     }
-
-    /*public function sortAscending($array)
-    {
-        // TODO: Implement sortAscending() method.
-    }
-
-    public function sortDescending($array)
-    {
-        // TODO: Implement sortDescending() method.
-    }*/
 }

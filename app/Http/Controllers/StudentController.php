@@ -22,6 +22,14 @@ class StudentController extends Controller
     private $sortOrder = 1;
     private $algorithm;
 
+    /**
+     * StudentController constructor.
+     * @param array $studentDetails
+     * @param array $subjects
+     * @param string $sortKey
+     * @param int $sortOrder
+     * @param int $algorithm
+     */
     public function __construct($studentDetails = [], $subjects = [], $sortKey = 'total', $sortOrder = 1, $algorithm = 1)
     {
         $this->studentDetails = $studentDetails;
@@ -31,6 +39,10 @@ class StudentController extends Controller
         $this->algorithm = $algorithm;
     }
 
+    /**
+     * @param $studentDetails
+     * @param $subjects
+     */
     private function printOutput($studentDetails, $subjects)
     {
         echo "\r\n";
@@ -47,8 +59,6 @@ class StudentController extends Controller
         foreach ($studentDetails as $k => $studentDetail) {
             printf('%-10s|%-10s|', $k+1, $studentDetail['name']);
 
-            /*foreach ($studentDetail['marks'] as $v)
-                printf('%-10s|', $v);*/
             foreach ($subjects as $subject)
                 printf('%-10s|', $studentDetail[$subject]);
             printf('%-10s', $studentDetail['total']);
@@ -61,10 +71,6 @@ class StudentController extends Controller
      */
     public function execute()
     {
-        /*echo "\r\nInput\r\n";
-        var_dump($this->studentDetails);
-        echo "\r\n";
-        var_dump($this->algorithm);*/
         switch ($this->algorithm)
         {
             case 1:
@@ -135,10 +141,6 @@ class StudentController extends Controller
                 }
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
-
-        /*echo "\r\nRESULT\r\n";
-        var_dump($sortedArray);
-        echo "\r\n";*/
         $this->printOutput($sortedArray, $this->subjects);
     }
 }

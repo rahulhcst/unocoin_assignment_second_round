@@ -23,7 +23,7 @@ class Sort
 
     /**
      * Sort constructor.
-     * @param SortContract $sortContract\
+     * @param SortContract $sortContract
      */
     public function __construct(SortContract $sortContract)
     {
@@ -32,20 +32,11 @@ class Sort
 
     /**
      * @param $array
+     * @param $sortKey
      * @return mixed
      */
-    public function sortAscending($array)
-    {
-        return $this->sortAlgorithm->sortAscending($array);
-    }
-
     public function sort($array, $sortKey)
     {
         return $this->sortAlgorithm->sort($array, $sortKey);
-    }
-
-    public function  sortDescending()
-    {
-
     }
 }

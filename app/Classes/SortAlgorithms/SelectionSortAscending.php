@@ -10,8 +10,16 @@ namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 
+/**
+ * Class SelectionSortAscending
+ * @package App\Classes\SortAlgorithms
+ */
 class SelectionSortAscending implements SortContract
 {
+    /**
+     * @param $a
+     * @param $b
+     */
     private function swap(&$a, &$b)
     {
         $temp = $a;
@@ -19,6 +27,10 @@ class SelectionSortAscending implements SortContract
         $b = $temp;
     }
 
+    /**
+     * @param $arr
+     * @param $sortKey
+     */
     private function selectionSort(&$arr, $sortKey)
     {
         $count = count($arr);
@@ -34,6 +46,11 @@ class SelectionSortAscending implements SortContract
         }
     }
 
+    /**
+     * @param $array
+     * @param $sortKey
+     * @return mixed
+     */
     public function sort($array, $sortKey)
     {
         $this->selectionSort($array, $sortKey);

@@ -19,18 +19,6 @@ interface SortContract
      * @return mixed
      */
     public function sort($array, $sortKey);
-
-    /**
-     * @param $array
-     * @return mixed
-     */
-    /*public function sortAscending($array);*/
-
-    /**
-     * @param $array
-     * @return mixed
-     */
-    /*public function sortDescending($array);*/
 }
 
 ?>

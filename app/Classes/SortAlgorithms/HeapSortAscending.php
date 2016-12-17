@@ -10,8 +10,16 @@ namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 
+/**
+ * Class HeapSortAscending
+ * @package App\Classes\SortAlgorithms
+ */
 class HeapSortAscending implements SortContract
 {
+    /**
+     * @param $a
+     * @param $b
+     */
     private function swap(&$a, &$b)
     {
         $temp = $a;
@@ -19,6 +27,12 @@ class HeapSortAscending implements SortContract
         $b = $temp;
     }
 
+    /**
+     * @param $arr
+     * @param $index
+     * @param $size
+     * @param $sortKey
+     */
     private function heapify(&$arr, $index, $size, $sortKey)
     {
         $largest = $index;
@@ -39,6 +53,10 @@ class HeapSortAscending implements SortContract
         }
     }
 
+    /**
+     * @param $arr
+     * @param $sortKey
+     */
     private function heapSort(&$arr, $sortKey)
     {
         $size = count($arr);
@@ -52,6 +70,11 @@ class HeapSortAscending implements SortContract
         }
     }
 
+    /**
+     * @param $array
+     * @param $sortKey
+     * @return mixed
+     */
     public function sort($array, $sortKey)
     {
         $this->heapSort($array, $sortKey);

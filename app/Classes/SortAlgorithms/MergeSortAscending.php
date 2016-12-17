@@ -10,8 +10,19 @@ namespace App\Classes\SortAlgorithms;
 
 use App\Interfaces\SortContract;
 
+/**
+ * Class MergeSortAscending
+ * @package App\Classes\SortAlgorithms
+ */
 class MergeSortAscending implements SortContract
 {
+    /**
+     * @param $arr
+     * @param $l
+     * @param $m
+     * @param $r
+     * @param $sortKey
+     */
     private function merge(&$arr, $l, $m, $r, $sortKey)
     {
         $n1 = $m - $l + 1;
@@ -27,37 +38,43 @@ class MergeSortAscending implements SortContract
         while ($i < $n1 && $j < $n2)
         {
             if($leftArr[$i][$sortKey] < $rightArr[$j][$sortKey])
-                $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+                $arr[$k++] = $leftArr[$i++];
             else
-                $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+                $arr[$k++] = $rightArr[$j++];
         }
 
         while ($i < $n1)
-            $arr[$k++] = $leftArr[$i++];//$arr[$k++][$sortKey] = $leftArr[$i++][$sortKey];
+            $arr[$k++] = $leftArr[$i++];
 
         while ($j < $n2)
-            $arr[$k++] = $rightArr[$j++];//$arr[$k++][$sortKey] = $rightArr[$j++][$sortKey];
+            $arr[$k++] = $rightArr[$j++];
 
     }
 
+    /**
+     * @param $arr
+     * @param $l
+     * @param $r
+     * @param $sortKey
+     */
     private function mergeSort(&$arr, $l, $r, $sortKey)
     {
-
         if ($l < $r)
         {
             $m = (int)(($l + $r)/2);
-
             $this->mergeSort($arr, $l, $m, $sortKey);
             $this->mergeSort($arr, $m+1, $r, $sortKey);
-
             $this->merge($arr, $l, $m, $r, $sortKey);
         }
-
     }
 
+    /**
+     * @param $array
+     * @param $sortKey
+     * @return mixed
+     */
     public function sort($array, $sortKey)
     {
-        //$array[0] = [89, 34, 100, 54, 67, 1];
         $this->mergeSort($array, 0 , (count($array) - 1), $sortKey);
         return $array;
     }
