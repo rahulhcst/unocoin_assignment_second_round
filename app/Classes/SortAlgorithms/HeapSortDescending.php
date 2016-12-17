@@ -42,7 +42,7 @@ class HeapSortDescending implements SortContract
     private function heapSort(&$arr, $sortKey)
     {
         $size = count($arr);
-        for ($i = $size/2-1; $i >=0 ; $i--)
+        for ($i = (int)($size/2-1); $i >=0 ; $i--)
             $this->heapify($arr, $i, $size, $sortKey);
 
         for ($i = $size - 1; $i >= 0; $i--)
@@ -55,7 +55,6 @@ class HeapSortDescending implements SortContract
     public function sort($array, $sortKey)
     {
         $this->heapSort($array, $sortKey);
-
         return $array;
     }
 }

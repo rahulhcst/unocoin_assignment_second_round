@@ -125,7 +125,7 @@ class Student extends Command
 
             echo "Sort list in ASCENDING ORDER or DESCINDING ORDER\r\n";
             echo "1...ASCENDING ORDER\r\n";
-            echo "2...DESCINDING ORDER\r\n";
+            echo "2...DESCENDING ORDER\r\n";
             $sortOrder = $this->ask('Your Selection', 1);
 
             switch ($sortOrder) {
