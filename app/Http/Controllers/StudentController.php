@@ -31,6 +31,30 @@ class StudentController extends Controller
         $this->algorithm = $algorithm;
     }
 
+    private function printOutput($studentDetails, $subjects)
+    {
+        echo "\r\n";
+        $length = printf('%-10s|%-10s|', 'Rank', 'Name');               //Assigning output i.e., characters printed to length variable
+        foreach ($subjects as $subject)
+            $length += printf('%-10s|', $subject);
+        $length += printf("%-10s\r\n", 'Total Marks');
+
+        for ($i = 0; $i < $length; $i++)
+            echo '_';
+
+        echo "\r\n";
+
+        foreach ($studentDetails as $k => $studentDetail) {
+            printf('%-10s|%-10s|', $k+1, $studentDetail['name']);
+
+            /*foreach ($studentDetail['marks'] as $v)
+                printf('%-10s|', $v);*/
+            foreach ($subjects as $subject)
+                printf('%-10s|', $subject);
+            printf('%-10s', $studentDetail['total']);
+            echo "\r\n";
+        }
+    }
 
     /**
      * Execute function
@@ -115,5 +139,6 @@ class StudentController extends Controller
         echo "\r\nRESULT\r\n";
         var_dump($sortedArray);
         echo "\r\n";
+        $this->printOutput($sort, $this->subjects);
     }
 }
