@@ -102,19 +102,13 @@ class Student extends Command
 
             switch ($sortBasedOn) {
                 case 1:
-                    //$sortKey = 'student';
-
                     echo "Enter subject name on which to sort result\r\n";
                     foreach ($subjects as $k => $subject)
                         echo ($k + 1) . "...$subject\r\n";
 
                     echo "Enter your choice\r\n";
-                    $choice = $this->ask('Enter', 0);
-
-                    //var_dump($subjects);
-
+                    $choice = $this->ask('Enter', 1);
                     $sortKey = $subjects[$choice - 1];
-                    //var_dump($sortKey);
                     break;
                 case 2:
                     $sortKey = 'total';
@@ -147,9 +141,7 @@ class Student extends Command
             $algorithm = $this->ask('Your Selection', 1);
 
             $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder, $algorithm);        //Instantiating class StudentController and passing array studentDetails, $subjects
-            //$studentObj = new StudentController($studentDetails, $subjects, 'total', 1);        //Instantiating class StudentController and passing array studentDetails, $subjects
-            //$studentObj->generateResult();                                                 //Calling function execute
-            $studentObj->execute();
+            $studentObj->execute();                                                         //Calling function execute
 
             $ch = $this->ask('Y or N', 'N');
         }
