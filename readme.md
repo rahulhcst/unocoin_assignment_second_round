@@ -1,40 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img width="150"src="https://laravel.com/laravel.png"></a></p>
+To run this project requires PHP version 5.6 or above.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is the CLI based programs.
 
-## About Laravel
+Following are the steps to run this program:
+1. Open console and cd into "unocoin_assignment_second_round" directory and type:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+        php artisan student
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. Then you are required to input number of students name. To stop entering students name leave the input field blank and hit return (enter).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+3. Then you are required to input students name. To stop entering students name leave the input field blank and hit return (enter).
 
-## Learning Laravel
+3. Then you are required to input subjects name. To stop entering subjects leave the input field blank and hit return (enter).
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+4. Then you are requird to enter subject marks for each student for each subject.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+5. Then it will be print the output after performing quick sort
 
-## Contributing
+Example output
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+root@ubuntu:/var/www/unocoin# php artisan student
 
-## Security Vulnerabilities
+ Enter name of STUDENT or LEAVE BLANK and hit return to exit []:
+ > Raj
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+ Enter name of STUDENT or LEAVE BLANK and hit return to exit []:
+ > Simran
 
-## License
+ Enter name of STUDENT or LEAVE BLANK and hit return to exit []:
+ > Vinod
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+ Enter name of STUDENT or LEAVE BLANK and hit return to exit []:
+ >
+
+------------------------------------------------------------
+ Enter name of SUBJECTS or LEAVE BLANK and hit return to exit []:
+ > English
+
+ Enter name of SUBJECTS or LEAVE BLANK and hit return to exit []:
+ > Math
+
+ Enter name of SUBJECTS or LEAVE BLANK and hit return to exit []:
+ > Science
+
+ Enter name of SUBJECTS or LEAVE BLANK and hit return to exit []:
+ >
+
+------------------------------------------------------------
+Enter marks for student Raj:
+ Enter marks of English []:
+ > 30
+
+ Enter marks of Math []:
+ > 50
+
+ Enter marks of Science []:
+ > 40
+
+Enter marks for student Simran:
+ Enter marks of English []:
+ > 50
+
+ Enter marks of Math []:
+ > 70
+
+ Enter marks of Science []:
+ > 50
+
+Enter marks for student Vinod:
+ Enter marks of English []:
+ > 40
+
+ Enter marks of Math []:
+ > 40
+
+ Enter marks of Science []:
+ > 30
+
+
+Rank      |Name      |English   |Math      |Science   |Total Marks<br/>
+____________________________________________________________________<br/>
+1         |Simran    |50        |70        |50        |170<br/>
+2         |Raj       |30        |50        |40        |120<br/>
+3         |Vinod     |40        |40        |30        |110<br/>

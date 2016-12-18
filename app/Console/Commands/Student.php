@@ -51,7 +51,7 @@ class Student extends Command
                 if ($input)
                     array_push($students, $input);
                 else
-                    break;
+                    exit("\r\nInvalid Input\r\n");
             }
         }
 
