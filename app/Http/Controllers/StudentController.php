@@ -74,7 +74,8 @@ class StudentController extends Controller
         switch ($this->algorithm)
         {
             case 1:
-                switch ($this->sortOrder)
+                $sortAlgo = 'QuickSort';
+                /*switch ($this->sortOrder)
                 {
                     case -1:
                         $sort = new Sort(new QuickSortDescending());
@@ -84,10 +85,11 @@ class StudentController extends Controller
                         break;
                     default:
                         $sort = new Sort(new QuickSortAscending());
-                }
+                }*/
                 break;
             case 2:
-                switch ($this->sortOrder)
+                $sortAlgo = 'MergeSort';
+                /*switch ($this->sortOrder)
                 {
                     case -1:
                         $sort = new Sort(new MergeSortDescending());
@@ -98,10 +100,11 @@ class StudentController extends Controller
                     default:
                         $sort = new Sort(new MergeSortAscending());
                         break;
-                }
+                }*/
                 break;
             case 3:
-                switch ($this->sortOrder)
+                $sortAlgo = 'SelectionSort';
+                /*switch ($this->sortOrder)
                 {
                     case -1:
                         $sort = new Sort(new SelectionSortDescending());
@@ -111,10 +114,11 @@ class StudentController extends Controller
                         break;
                     default:
                         $sort = new Sort(new SelectionSortAscending());
-                }
+                }*/
                 break;
             case 4:
-                switch ($this->sortOrder)
+                $sortAlgo = 'HeapSort';
+                /*switch ($this->sortOrder)
                 {
                     case -1:
                         $sort = new Sort(new HeapSortDescending());
@@ -124,11 +128,11 @@ class StudentController extends Controller
                         break;
                     default:
                         $sort = new Sort(new HeapSortAscending());
-                }
-
+                }*/
                 break;
             default:
-                switch ($this->sortOrder)
+                $sortAlgo = 'QuickSort';
+                /*switch ($this->sortOrder)
                 {
                     case -1:
                         $sort = new Sort(new HeapSortAscending());
@@ -138,7 +142,20 @@ class StudentController extends Controller
                         break;
                     default:
                         $sort = new Sort(new HeapSortAscending());
-                }
+                }*/
+        }
+
+        switch ($this->sortOrder)
+        {
+            case -1:
+                $sort = new Sort(new $sortAlgo.'Descending');
+                break;
+            case 1:
+                $sort = new Sort(new $sortAlgo.'Ascending');
+                break;
+            default:
+                $sort = new Sort(new $sortAlgo.'Ascending');
+                break;
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
         $this->printOutput($sortedArray, $this->subjects);
