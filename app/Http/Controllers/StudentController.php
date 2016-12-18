@@ -13,6 +13,10 @@ use App\Classes\SortAlgorithms\SelectionSortAscending;
 use App\Classes\SortAlgorithms\SelectionSortDescending;
 use Illuminate\Http\Request;
 
+/**
+ * Class StudentController
+ * @package App\Http\Controllers
+ */
 class StudentController extends Controller
 {
     private $studentDetails;
