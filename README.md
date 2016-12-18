@@ -89,23 +89,23 @@ Enter marks for student Vinod:
  Enter marks of Science []:
  > 30
  
- Sort list on basis of SUBJECT or TOTAL MARKS
- 1...SUBJECT
- 2...TOTAL MARKS
+ Sort list on basis of SUBJECT or TOTAL MARKS<br/>
+ 1...SUBJECT<br/>
+ 2...TOTAL MARKS<br/>
   Your selection [2]:
   > 3
 
-Sort list in ASCENDING ORDER or DESCINDING ORDER
-1...ASCENDING ORDER
-2...DESCENDING ORDER
+Sort list in ASCENDING ORDER or DESCINDING ORDER<br/>
+1...ASCENDING ORDER<br/>
+2...DESCENDING ORDER<br/>
  Your Selection [1]:
  > 1
 
-Select SORTING ALGORITHM from below algorithms
-1...QUICKSORT
-2...MERGESORT
-3...SELECTION SORT
-4...HEAPSORT
+Select SORTING ALGORITHM from below algorithms<br/>
+1...QUICKSORT<br/>
+2...MERGESORT<br/>
+3...SELECTION SORT<br/>
+4...HEAPSORT<br/>
  Your Selection [1]:
  > 2
 
