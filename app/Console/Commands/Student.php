@@ -89,7 +89,7 @@ class Student extends Command
                 $details[$subject] = $marks;
                 $details['total'] += $marks;                                    //Taking sum of the marks
             }
-            array_push($studentDetails, $details);                              //Pushin details into array $studentDetails
+            array_push($studentDetails, $details);                              //Pushing details into array $studentDetails
         }
         $ch = 'Y';
         while (strtoupper($ch)  == 'Y') {
@@ -114,10 +114,11 @@ class Student extends Command
                     $sortKey = 'total';
                     break;
                 default:
+                    echo "\r\nYou have selected an invalid input, sorting will on the basis of default option TOTAL MARKS\r\n";
                     $sortKey = 'total';
             }
 
-            echo "Sort list in ASCENDING ORDER or DESCINDING ORDER\r\n";
+            echo "Sort list in ASCENDING ORDER or DESCENDING ORDER\r\n";
             echo "1...ASCENDING ORDER\r\n";
             echo "2...DESCENDING ORDER\r\n";
             $sortOrder = $this->ask('Your Selection', 1);
@@ -143,6 +144,7 @@ class Student extends Command
             $studentObj = new StudentController($studentDetails, $subjects, $sortKey, $sortOrder, $algorithm);        //Instantiating class StudentController and passing array studentDetails, $subjects
             $studentObj->execute();                                                         //Calling function execute
 
+            echo "\r\nDo you wish to continue with other options?\r\n";
             $ch = $this->ask('Y or N', 'N');
         }
     }
