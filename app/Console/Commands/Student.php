@@ -43,6 +43,8 @@ class Student extends Command
         $students = [];
         $subjects = [];
         $count = $this->ask('Enter number of students', 0);
+        if (!$count)
+            exit("\r\nInvalid Input\r\n");
         if ($count)
         {
             for ($i = 0; $i < $count; $i++)
