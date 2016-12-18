@@ -8,7 +8,6 @@ use App\Classes\SortAlgorithms\MergeSortAscending;
 use App\Classes\SortAlgorithms\MergeSortDescending;
 use App\Classes\SortAlgorithms\QuickSortAscending;
 use App\Classes\Sort;
-use App\Classes\SortAlgorithms\QuickSort;
 use App\Classes\SortAlgorithms\QuickSortDescending;
 use App\Classes\SortAlgorithms\SelectionSortAscending;
 use App\Classes\SortAlgorithms\SelectionSortDescending;
@@ -148,13 +147,16 @@ class StudentController extends Controller
         switch ($this->sortOrder)
         {
             case -1:
-                $sort = new Sort(new $sortAlgo.'Descending');
+                $sortAlgo = 'App\Classes\SortAlgorithms\\'.$sortAlgo.'Descending';
+                $sort = new Sort(new $sortAlgo);
                 break;
             case 1:
-                $sort = new Sort(new $sortAlgo.'Ascending');
+                $sortAlgo = 'App\Classes\SortAlgorithms\\'.$sortAlgo.'Ascending';
+                $sort = new Sort(new $sortAlgo);
                 break;
             default:
-                $sort = new Sort(new $sortAlgo.'Ascending');
+                $sortAlgo = 'App\Classes\SortAlgorithms\\'.$sortAlgo.'Ascending';
+                $sort = new Sort(new $sortAlgo);
                 break;
         }
         $sortedArray = $sort->sort($this->studentDetails, $this->sortKey);
