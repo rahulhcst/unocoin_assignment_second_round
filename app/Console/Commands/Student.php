@@ -60,6 +60,8 @@ class Student extends Command
         echo "------------------------------------------------------------\r\n\r\n";
 
         $count = $this->ask('Enter number of subjects', 0);
+        if (!$count)
+            exit("\r\nInvalid Input\r\n");
         if($count)
         {
             for ($i = 0; $i < $count; $i++)
@@ -95,8 +97,6 @@ class Student extends Command
         }
         $ch = 'Y';
         while (strtoupper($ch)  == 'Y') {
-
-
             echo "Sort list on basis of SUBJECT or TOTAL MARKS\r\n";
             echo "1...SUBJECT\r\n";
             echo "2...TOTAL MARKS\r\n";
