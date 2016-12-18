@@ -2,20 +2,32 @@ To run this project requires PHP version 5.6 or above.
 
 This is the CLI based programs.
 
+This task is completed using the **Strategy Design Pattern**.
+
 Following are the steps to run this program:
 1. Open console and cd into "unocoin_assignment_second_round" directory and type:
 
         php artisan student
 
-2. Then you are required to input number of students name. To stop entering students name leave the input field blank and hit return (enter).
+2. Then you are required to input number of students. Invalid input will exit the program.
 
 3. Then you are required to input students name. To stop entering students name leave the input field blank and hit return (enter).
 
-3. Then you are required to input subjects name. To stop entering subjects leave the input field blank and hit return (enter).
+4. Then you are required to input number of students. Invalid input will exit the program.
 
-4. Then you are requird to enter subject marks for each student for each subject.
+5. Then you are required to input subjects name. To stop entering subjects leave the input field blank and hit return (enter).
 
-5. Then it will be print the output after performing quick sort
+6. Then you are requird to enter subject marks for each student for each subject. Default is marks is 0.
+
+7. Then enter subjects or total marks on which the list will be sorted.
+
+8. Then enter the order to sort the list ascending or descending order.
+
+9. Then you have to select a sorting algorithm to sort the result from the algorithm options: Quicksort, Mergesort, Selection Sort, Heapsort.
+
+10. Then it will print the output after performing quick sort.
+
+11. If you want to again sort with different options press 'Y' else 'N' to exit. 
 
 Example output
 
@@ -76,7 +88,26 @@ Enter marks for student Vinod:
 
  Enter marks of Science []:
  > 30
+ 
+ Sort list on basis of SUBJECT or TOTAL MARKS
+ 1...SUBJECT
+ 2...TOTAL MARKS
+  Your selection [2]:
+  > 3
 
+Sort list in ASCENDING ORDER or DESCINDING ORDER
+1...ASCENDING ORDER
+2...DESCENDING ORDER
+ Your Selection [1]:
+ > 1
+
+Select SORTING ALGORITHM from below algorithms
+1...QUICKSORT
+2...MERGESORT
+3...SELECTION SORT
+4...HEAPSORT
+ Your Selection [1]:
+ > 2
 
 Rank      |Name      |English   |Math      |Science   |Total Marks<br/>
 ____________________________________________________________________<br/>
